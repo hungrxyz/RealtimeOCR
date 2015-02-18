@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA9167191A953766009BD26E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9167181A953766009BD26E /* AppDelegate.swift */; };
+		FA91671B1A953766009BD26E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91671A1A953766009BD26E /* ViewController.swift */; };
+		FA91671E1A953766009BD26E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA91671C1A953766009BD26E /* Main.storyboard */; };
+		FA9167201A953766009BD26E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA91671F1A953766009BD26E /* Images.xcassets */; };
+		FA9167231A953766009BD26E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9167211A953766009BD26E /* LaunchScreen.xib */; };
+		FA91672F1A953766009BD26E /* OpenCVTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91672E1A953766009BD26E /* OpenCVTTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA9167291A953766009BD26E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA91670B1A953766009BD26E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA9167121A953766009BD26E;
+			remoteInfo = OpenCVT;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA9167131A953766009BD26E /* OpenCVT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCVT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9167171A953766009BD26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA9167181A953766009BD26E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA91671A1A953766009BD26E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA91671D1A953766009BD26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA91671F1A953766009BD26E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FA9167221A953766009BD26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FA9167281A953766009BD26E /* OpenCVTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenCVTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA91672D1A953766009BD26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA91672E1A953766009BD26E /* OpenCVTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVTTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA9167101A953766009BD26E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA9167251A953766009BD26E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA91670A1A953766009BD26E = {
+			isa = PBXGroup;
+			children = (
+				FA9167151A953766009BD26E /* OpenCVT */,
+				FA91672B1A953766009BD26E /* OpenCVTTests */,
+				FA9167141A953766009BD26E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA9167141A953766009BD26E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA9167131A953766009BD26E /* OpenCVT.app */,
+				FA9167281A953766009BD26E /* OpenCVTTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA9167151A953766009BD26E /* OpenCVT */ = {
+			isa = PBXGroup;
+			children = (
+				FA9167181A953766009BD26E /* AppDelegate.swift */,
+				FA91671A1A953766009BD26E /* ViewController.swift */,
+				FA91671C1A953766009BD26E /* Main.storyboard */,
+				FA91671F1A953766009BD26E /* Images.xcassets */,
+				FA9167211A953766009BD26E /* LaunchScreen.xib */,
+				FA9167161A953766009BD26E /* Supporting Files */,
+			);
+			path = OpenCVT;
+			sourceTree = "<group>";
+		};
+		FA9167161A953766009BD26E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA9167171A953766009BD26E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA91672B1A953766009BD26E /* OpenCVTTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA91672E1A953766009BD26E /* OpenCVTTests.swift */,
+				FA91672C1A953766009BD26E /* Supporting Files */,
+			);
+			path = OpenCVTTests;
+			sourceTree = "<group>";
+		};
+		FA91672C1A953766009BD26E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA91672D1A953766009BD26E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA9167121A953766009BD26E /* OpenCVT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA9167321A953766009BD26E /* Build configuration list for PBXNativeTarget "OpenCVT" */;
+			buildPhases = (
+				FA91670F1A953766009BD26E /* Sources */,
+				FA9167101A953766009BD26E /* Frameworks */,
+				FA9167111A953766009BD26E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenCVT;
+			productName = OpenCVT;
+			productReference = FA9167131A953766009BD26E /* OpenCVT.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA9167271A953766009BD26E /* OpenCVTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA9167351A953766009BD26E /* Build configuration list for PBXNativeTarget "OpenCVTTests" */;
+			buildPhases = (
+				FA9167241A953766009BD26E /* Sources */,
+				FA9167251A953766009BD26E /* Frameworks */,
+				FA9167261A953766009BD26E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA91672A1A953766009BD26E /* PBXTargetDependency */,
+			);
+			name = OpenCVTTests;
+			productName = OpenCVTTests;
+			productReference = FA9167281A953766009BD26E /* OpenCVTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA91670B1A953766009BD26E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Zel Marko";
+				TargetAttributes = {
+					FA9167121A953766009BD26E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					FA9167271A953766009BD26E = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = FA9167121A953766009BD26E;
+					};
+				};
+			};
+			buildConfigurationList = FA91670E1A953766009BD26E /* Build configuration list for PBXProject "OpenCVT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA91670A1A953766009BD26E;
+			productRefGroup = FA9167141A953766009BD26E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA9167121A953766009BD26E /* OpenCVT */,
+				FA9167271A953766009BD26E /* OpenCVTTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA9167111A953766009BD26E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA91671E1A953766009BD26E /* Main.storyboard in Resources */,
+				FA9167231A953766009BD26E /* LaunchScreen.xib in Resources */,
+				FA9167201A953766009BD26E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA9167261A953766009BD26E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA91670F1A953766009BD26E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA91671B1A953766009BD26E /* ViewController.swift in Sources */,
+				FA9167191A953766009BD26E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA9167241A953766009BD26E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA91672F1A953766009BD26E /* OpenCVTTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA91672A1A953766009BD26E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA9167121A953766009BD26E /* OpenCVT */;
+			targetProxy = FA9167291A953766009BD26E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA91671C1A953766009BD26E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA91671D1A953766009BD26E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA9167211A953766009BD26E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA9167221A953766009BD26E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA9167301A953766009BD26E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA9167311A953766009BD26E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA9167331A953766009BD26E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenCVT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA9167341A953766009BD26E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenCVT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FA9167361A953766009BD26E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenCVTTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenCVT.app/OpenCVT";
+			};
+			name = Debug;
+		};
+		FA9167371A953766009BD26E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenCVTTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenCVT.app/OpenCVT";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA91670E1A953766009BD26E /* Build configuration list for PBXProject "OpenCVT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA9167301A953766009BD26E /* Debug */,
+				FA9167311A953766009BD26E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA9167321A953766009BD26E /* Build configuration list for PBXNativeTarget "OpenCVT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA9167331A953766009BD26E /* Debug */,
+				FA9167341A953766009BD26E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA9167351A953766009BD26E /* Build configuration list for PBXNativeTarget "OpenCVTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA9167361A953766009BD26E /* Debug */,
+				FA9167371A953766009BD26E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA91670B1A953766009BD26E /* Project object */;
+}
