@@ -1,5 +1,5 @@
 # RealtimeOCR
-Realtime OCR with Tesseract and OpenCV
+Realtime OCR with Tesseract and OpenCV, written in Swift.
 
 Idea behind this project is to recreate the iTunes iOS App's gift card code scanner.
 
