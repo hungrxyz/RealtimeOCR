@@ -13,6 +13,14 @@
 		FA9167201A953766009BD26E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA91671F1A953766009BD26E /* Images.xcassets */; };
 		FA9167231A953766009BD26E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9167211A953766009BD26E /* LaunchScreen.xib */; };
 		FA91672F1A953766009BD26E /* OpenCVTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91672E1A953766009BD26E /* OpenCVTTests.swift */; };
+		FA9167391A953777009BD26E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9167381A953777009BD26E /* opencv2.framework */; };
+		FA9167421A958304009BD26E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9167411A958304009BD26E /* AVFoundation.framework */; };
+		FA9167461A962528009BD26E /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA9167451A962528009BD26E /* CVWrapper.mm */; };
+		FA9167491A962744009BD26E /* CVSquares.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9167481A962744009BD26E /* CVSquares.cpp */; };
+		FA9167631A9CC629009BD26E /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9167621A9CC629009BD26E /* TesseractOCR.framework */; };
+		FA9167651A9CC675009BD26E /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9167641A9CC675009BD26E /* CoreImage.framework */; };
+		FA9167671A9CC681009BD26E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9167661A9CC681009BD26E /* libstdc++.dylib */; };
+		FA9167691A9CCB44009BD26E /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = FA9167681A9CCB44009BD26E /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,17 @@
 		FA9167281A953766009BD26E /* OpenCVTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenCVTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA91672D1A953766009BD26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA91672E1A953766009BD26E /* OpenCVTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVTTests.swift; sourceTree = "<group>"; };
+		FA9167381A953777009BD26E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		FA9167411A958304009BD26E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA9167441A962528009BD26E /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
+		FA9167451A962528009BD26E /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
+		FA9167471A962665009BD26E /* CVSquaresHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVSquaresHeader.h; sourceTree = "<group>"; };
+		FA9167481A962744009BD26E /* CVSquares.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CVSquares.cpp; sourceTree = "<group>"; };
+		FA91675E1A963CF1009BD26E /* OpenCVT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenCVT-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA9167621A9CC629009BD26E /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		FA9167641A9CC675009BD26E /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		FA9167661A9CC681009BD26E /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		FA9167681A9CCB44009BD26E /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +62,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9167671A9CC681009BD26E /* libstdc++.dylib in Frameworks */,
+				FA9167651A9CC675009BD26E /* CoreImage.framework in Frameworks */,
+				FA9167421A958304009BD26E /* AVFoundation.framework in Frameworks */,
+				FA9167631A9CC629009BD26E /* TesseractOCR.framework in Frameworks */,
+				FA9167391A953777009BD26E /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +103,11 @@
 			children = (
 				FA9167181A953766009BD26E /* AppDelegate.swift */,
 				FA91671A1A953766009BD26E /* ViewController.swift */,
+				FA9167441A962528009BD26E /* CVWrapper.h */,
+				FA9167451A962528009BD26E /* CVWrapper.mm */,
+				FA9167471A962665009BD26E /* CVSquaresHeader.h */,
+				FA9167481A962744009BD26E /* CVSquares.cpp */,
+				FA91675E1A963CF1009BD26E /* OpenCVT-Bridging-Header.h */,
 				FA91671C1A953766009BD26E /* Main.storyboard */,
 				FA91671F1A953766009BD26E /* Images.xcassets */,
 				FA9167211A953766009BD26E /* LaunchScreen.xib */,
@@ -90,6 +119,12 @@
 		FA9167161A953766009BD26E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA9167681A9CCB44009BD26E /* tessdata */,
+				FA9167661A9CC681009BD26E /* libstdc++.dylib */,
+				FA9167641A9CC675009BD26E /* CoreImage.framework */,
+				FA9167621A9CC629009BD26E /* TesseractOCR.framework */,
+				FA9167411A958304009BD26E /* AVFoundation.framework */,
+				FA9167381A953777009BD26E /* opencv2.framework */,
 				FA9167171A953766009BD26E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA91671E1A953766009BD26E /* Main.storyboard in Resources */,
+				FA9167691A9CCB44009BD26E /* tessdata in Resources */,
 				FA9167231A953766009BD26E /* LaunchScreen.xib in Resources */,
 				FA9167201A953766009BD26E /* Images.xcassets in Resources */,
 			);
@@ -213,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA91671B1A953766009BD26E /* ViewController.swift in Sources */,
+				FA9167461A962528009BD26E /* CVWrapper.mm in Sources */,
 				FA9167191A953766009BD26E /* AppDelegate.swift in Sources */,
+				FA9167491A962744009BD26E /* CVSquares.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,9 +374,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenCVT",
+				);
 				INFOPLIST_FILE = OpenCVT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Devxhkl/Desktop/OpenCVT/OpenCVT/OpenCVT-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +393,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenCVT",
+				);
 				INFOPLIST_FILE = OpenCVT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Devxhkl/Desktop/OpenCVT/OpenCVT/OpenCVT-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +460,7 @@
 				FA9167341A953766009BD26E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA9167351A953766009BD26E /* Build configuration list for PBXNativeTarget "OpenCVTTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +469,7 @@
 				FA9167371A953766009BD26E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
