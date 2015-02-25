@@ -16,7 +16,7 @@
 
 @implementation CVWrapper
 
-
+//Creates a Mat image and pushes it through OpenCV to detect rectangles
 + (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer {
     
     
