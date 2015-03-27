@@ -24,7 +24,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         
         cameraSetup()
     }
-    
+    // MARK: - Preview Setup
     /**
     Setup for the live preview and sampleBuffer.
     */
@@ -106,6 +106,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
             })
         }
     }
+    // MARK: - Tesseract
     /**
     Perfroms character recognition on the detected rectangle we get from OpenCV.
 
@@ -120,7 +121,13 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         tesseract.image = image.g8_blackAndWhite()
         tesseract.recognize()
         
-        println("Recognized text: \(tesseract.recognizedText)")
+        if let text = tesseract.recognizedText {
+            println("Recognized text: \(tesseract.recognizedText)")
+        }
+        else {
+            println("No text recognized.")
+        }
+        
     }
     /**
     Scales image to the selected maximal dimension with the original aspect ratio.
@@ -184,12 +191,6 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         
         return rotatedImage
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

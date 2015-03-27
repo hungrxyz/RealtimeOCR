@@ -104,11 +104,10 @@ static void rectanglessss(const Mat& image, vector<vector<Point> >& squares)
         if (fabs(contourArea(contours[i])) < 100 || !isContourConvex(approx))
             continue;
         
-        if (approx.size() >= 4 && approx.size() <= 6)
+        if (approx.size() == 4)
         {
             // Number of vertices of polygonal curve
-            int vtc = approx.size();
-            cout << vtc << endl;
+            long vtc = approx.size();
             
             // Get the cosines of all corners
             vector<double> cos;
@@ -122,7 +121,7 @@ static void rectanglessss(const Mat& image, vector<vector<Point> >& squares)
             double mincos = cos.front();
             double maxcos = cos.back();
             
-            cout << mincos << "\n" << maxcos << endl;
+            cout << "Min. corner angle: " << mincos << "\n" << "Max. corner angle: " << maxcos << endl;
             
             if (vtc == 4 && mincos >= -0.2 && maxcos <= 0.5)
                 squares.push_back(approx);
