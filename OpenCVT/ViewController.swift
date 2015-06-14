@@ -34,7 +34,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         var backCameraDevice: AVCaptureDevice?
         var frontCameraDevice: AVCaptureDevice?
         
-        for device in availableCameraDevices as [AVCaptureDevice] {
+        for device in availableCameraDevices as! [AVCaptureDevice] {
             if device.position == .Back {
                 backCameraDevice = device
             }
@@ -80,7 +80,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         }
         
         videoOutput.videoSettings = NSDictionary(objectsAndKeys: Int(kCVPixelFormatType_32BGRA),
-            kCVPixelBufferPixelFormatTypeKey)
+            kCVPixelBufferPixelFormatTypeKey) as [NSObject : AnyObject]
         
         session.startRunning()
         
