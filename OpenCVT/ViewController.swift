@@ -34,7 +34,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         var backCameraDevice: AVCaptureDevice?
         var frontCameraDevice: AVCaptureDevice?
         
-        for device in availableCameraDevices as [AVCaptureDevice] {
+        for device in availableCameraDevices as! [AVCaptureDevice] {
             if device.position == .Back {
                 backCameraDevice = device
             }
@@ -44,13 +44,17 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         }
         
         var error: NSError?
-        let possibleCameraInput: AnyObject? = AVCaptureDeviceInput.deviceInputWithDevice(backCameraDevice, error: &error)
-        if let backCameraInput = possibleCameraInput as? AVCaptureDeviceInput {
-            if session.canAddInput(backCameraInput) {
-               session.addInput(backCameraInput)
+        do {
+            let possibleCameraInput: AnyObject? = try AVCaptureDeviceInput(device: backCameraDevice) as AVCaptureDeviceInput
+            
+            if let backCameraInput = possibleCameraInput as? AVCaptureDeviceInput {
+                if session.canAddInput(backCameraInput) {
+                    session.addInput(backCameraInput)
+                }
             }
         }
-        
+        catch let error as NSError { print(error) }
+    
         let authorizationStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
         switch authorizationStatus {
         case .NotDetermined:
@@ -64,9 +68,9 @@ let previewLayer = AVCaptureVideoPreviewLayer()
                 
             })
         case .Authorized:
-            println()
+            print("")
         case .Denied, .Restricted:
-            println()
+            print("")
         }
         previewLayer.session = session
         previewLayer.frame = self.view.bounds
@@ -79,8 +83,9 @@ let previewLayer = AVCaptureVideoPreviewLayer()
             session.addOutput(videoOutput)
         }
         
-        videoOutput.videoSettings = NSDictionary(objectsAndKeys: Int(kCVPixelFormatType_32BGRA),
-            kCVPixelBufferPixelFormatTypeKey)
+//        videoOutput.videoSettings = NSDictionary(objectsAndKeys: Int(kCVPixelFormatType_32BGRA),
+//            kCVPixelBufferPixelFormatTypeKey)
+        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey: Int(kCVPixelFormatType_32BGRA)]
         
         session.startRunning()
         
@@ -91,7 +96,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         connection.videoOrientation = AVCaptureVideoOrientation.Portrait
         
         let img: UIImage = CVWrapper.imageFromSampleBuffer(sampleBuffer)
-        println(img.size)
+        print(img.size)
         
         
         
@@ -110,7 +115,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
     /**
     Perfroms character recognition on the detected rectangle we get from OpenCV.
 
-    :param: image The input image on which the recognition is done.
+    - parameter image: The input image on which the recognition is done.
     */
     func performImageRecognition(image: UIImage) {
         let tesseract = G8Tesseract()
@@ -122,20 +127,20 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         tesseract.recognize()
         
         if let text = tesseract.recognizedText {
-            println("Recognized text: \(tesseract.recognizedText)")
+            print("Recognized text: \(tesseract.recognizedText)")
         }
         else {
-            println("No text recognized.")
+            print("No text recognized.")
         }
         
     }
     /**
     Scales image to the selected maximal dimension with the original aspect ratio.
 
-    :param: image Image to scale.
-    :param: maxDimension preffered maximal dimension of width or height.
+    - parameter image: Image to scale.
+    - parameter maxDimension: preffered maximal dimension of width or height.
 
-    :returns: UIImage Scaled image.
+    - returns: UIImage Scaled image.
     */
     func scaleImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
         
