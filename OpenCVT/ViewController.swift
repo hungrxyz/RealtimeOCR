@@ -30,15 +30,15 @@ let previewLayer = AVCaptureVideoPreviewLayer()
     */
     func cameraSetup() {
         
-        let availableCameraDevices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
+        let availableCameraDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
         var backCameraDevice: AVCaptureDevice?
         var frontCameraDevice: AVCaptureDevice?
         
         for device in availableCameraDevices as! [AVCaptureDevice] {
-            if device.position == .Back {
+            if device.position == .back {
                 backCameraDevice = device
             }
-            else if device.position == .Front {
+            else if device.position == .front {
                 frontCameraDevice = device
             }
         }
@@ -55,10 +55,10 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         }
         catch let error as NSError { print(error) }
     
-        let authorizationStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
+        let authorizationStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch authorizationStatus {
-        case .NotDetermined:
-            AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: { (granted: Bool) -> Void in
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (granted: Bool) -> Void in
                 if granted {
                     
                 }
@@ -67,9 +67,9 @@ let previewLayer = AVCaptureVideoPreviewLayer()
                 }
                 
             })
-        case .Authorized:
+        case .authorized:
             print("")
-        case .Denied, .Restricted:
+        case .denied, .restricted:
             print("")
         }
         previewLayer.session = session
@@ -78,24 +78,24 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         
         
         let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: dispatch_queue_create("sample buffer delegate", DISPATCH_QUEUE_SERIAL))
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer delegate", attributes: []))
         if session.canAddOutput(videoOutput) {
             session.addOutput(videoOutput)
         }
         
 //        videoOutput.videoSettings = NSDictionary(objectsAndKeys: Int(kCVPixelFormatType_32BGRA),
 //            kCVPixelBufferPixelFormatTypeKey)
-        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey: Int(kCVPixelFormatType_32BGRA)]
+        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable: Int(kCVPixelFormatType_32BGRA)]
         
         session.startRunning()
         
     }
     
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
     
-        connection.videoOrientation = AVCaptureVideoOrientation.Portrait
+        connection.videoOrientation = AVCaptureVideoOrientation.portrait
         
-        let img: UIImage = CVWrapper.imageFromSampleBuffer(sampleBuffer)
+        let img: UIImage = CVWrapper.image(from: sampleBuffer)
         print(img.size)
         
         
@@ -105,9 +105,9 @@ let previewLayer = AVCaptureVideoPreviewLayer()
             let scaledImage = rotateImage(scaleImage(img, maxDimension: 640), degrees: 0)
             performImageRecognition(scaledImage)
             session.stopRunning()
-            dispatch_sync(dispatch_get_main_queue(), {
+            DispatchQueue.main.sync(execute: {
                 self.platno.image = scaledImage
-                self.platno.bringSubviewToFront(self.platno)
+                self.platno.bringSubview(toFront: self.platno)
             })
         }
     }
@@ -117,11 +117,11 @@ let previewLayer = AVCaptureVideoPreviewLayer()
 
     - parameter image: The input image on which the recognition is done.
     */
-    func performImageRecognition(image: UIImage) {
+    func performImageRecognition(_ image: UIImage) {
         let tesseract = G8Tesseract()
         tesseract.language = "eng"
-        tesseract.engineMode = .TesseractCubeCombined
-        tesseract.pageSegmentationMode = .Auto
+        tesseract.engineMode = .tesseractCubeCombined
+        tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 60.0
         tesseract.image = image.g8_blackAndWhite()
         tesseract.recognize()
@@ -142,7 +142,7 @@ let previewLayer = AVCaptureVideoPreviewLayer()
 
     - returns: UIImage Scaled image.
     */
-    func scaleImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
+    func scaleImage(_ image: UIImage, maxDimension: CGFloat) -> UIImage {
         
         var scaledSize = CGSize(width: maxDimension, height: maxDimension);
         var scaleFactor: CGFloat
@@ -162,14 +162,14 @@ let previewLayer = AVCaptureVideoPreviewLayer()
         }
         
         UIGraphicsBeginImageContext(scaledSize)
-        image.drawInRect(CGRectMake(0, 0, scaledSize.width, scaledSize.height))
+        image.draw(in: CGRect(x: 0, y: 0, width: scaledSize.width, height: scaledSize.height))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return scaledImage
+        return scaledImage!
     }
     
-    func rotateImage(image: UIImage, degrees: CGFloat) -> UIImage {
+    func rotateImage(_ image: UIImage, degrees: CGFloat) -> UIImage {
         
         let radiansToDegrees: (CGFloat) -> CGFloat = {
             return $0 * (180.0 / CGFloat(M_PI))
@@ -178,23 +178,23 @@ let previewLayer = AVCaptureVideoPreviewLayer()
             return $0 / 180.0 * CGFloat(M_PI)
         }
         
-        let rotatedViewBox = UIView(frame: CGRect(origin: CGPointZero, size: image.size))
-        let t = CGAffineTransformMakeRotation(degreesToRadians(degrees))
+        let rotatedViewBox = UIView(frame: CGRect(origin: CGPoint.zero, size: image.size))
+        let t = CGAffineTransform(rotationAngle: degreesToRadians(degrees))
         rotatedViewBox.transform = t
         let rotatedSize = rotatedViewBox.frame.size
         
         UIGraphicsBeginImageContext(rotatedSize)
         let bitmap = UIGraphicsGetCurrentContext()
         
-        CGContextTranslateCTM(bitmap, rotatedSize.width / 2.0, rotatedSize.height / 2.0)
-        CGContextRotateCTM(bitmap, degreesToRadians(degrees))
-        CGContextScaleCTM(bitmap, 1.0, -1.0)
-        CGContextDrawImage(bitmap, CGRectMake(-image.size.width / 2, -image.size.height / 2, image.size.width, image.size.height), image.CGImage)
+        bitmap?.translateBy(x: rotatedSize.width / 2.0, y: rotatedSize.height / 2.0)
+        bitmap?.rotate(by: degreesToRadians(degrees))
+        bitmap?.scaleBy(x: 1.0, y: -1.0)
+        bitmap?.draw(image.cgImage!, in: CGRect(x: -image.size.width / 2, y: -image.size.height / 2, width: image.size.width, height: image.size.height))
         
         let rotatedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return rotatedImage
+        return rotatedImage!
     }
 
 }
